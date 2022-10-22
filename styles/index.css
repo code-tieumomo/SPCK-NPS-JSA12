@@ -1,79 +1,130 @@
 /* Reset */
 a {
-  text-decoration: none;
+    text-decoration: none;
 }
 button {
-  background-color: transparent;
-  border: none;
+    background-color: transparent;
+    border: none;
 }
 
 /* Header */
 header {
-  width: 100%;
-  background-color: #ffffff;
-  box-shadow: 4px 4px 20px rgb(0 0 0 / 10%);
-  padding: 10px 0;
-  font-size: 14px;
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 4px 4px 20px rgb(0 0 0 / 10%);
+    padding: 10px 0;
+    font-size: 16px;
+    position: relative;
 }
 
 .header-wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .header-left {
-  display: flex;
-  gap: 20px;
+    display: flex;
+    gap: 20px;
 }
 
 .header-left > .logo > img {
-  width: 110px;
+    width: 110px;
 }
 
 .vertical-divider {
-  width: 1px;
-  height: 25px;
-  background-color: #d9d9d9;
+    width: 1px;
+    height: 25px;
+    background-color: #d9d9d9;
 }
 
 .header-left > .shop-link {
-  color: #92400e;
-  background-color: #fff7ed;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  font-size: 12px;
-  padding: 3px 10px;
-  border-radius: 14px;
-  white-space: nowrap;
+    color: #92400e;
+    background-color: #fff7ed;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 14px;
+    white-space: nowrap;
 }
 .header-right {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  align-items: center;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    align-items: center;
 }
 .header-right > button {
-  color: #969696;
-  width: 40px;
-  height: 40px;
+    color: #969696;
+    width: 40px;
+    height: 40px;
 }
 .header-right > button:hover {
-  background-color: rgba(227, 235, 246, 0.5);
+    background-color: rgba(227, 235, 246, 0.5);
 }
 .right-right {
-  display: flex;
-  gap: 20px;
-  align-items: center;
+    display: flex;
+    gap: 15px;
+    align-items: center;
 }
 .right-right > button {
-  background-color: #2e89bf;
-  color: white;
-  border-radius: 21px;
-  padding: 0.5rem 1.5rem;
+    background-color: #2e89bf;
+    color: white;
+    border-radius: 21px;
+    padding: 0.5rem 1.5rem;
 }
 
 .right-right > a {
-  color: black;
+    color: black;
 }
+.searchBar {
+    position: absolute;
+    inset: 0;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.searchBar > form {
+    width: 100%;
+    display: flex;
+    background-color: #f3f7ff;
+    padding: 10px 16px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+.searchBar > form > button {
+    width: 30px;
+    height: 30px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+.searchBar > form > input {
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    padding: 0 16px;
+    font-size: 14px;
+    background-color: #f3f7ff;
+}
+/* ap dung cho tat ca cac man hinh nho hon 992px */
+@media screen and (max-width: 992px) {
+    .header-left > .shop-link {
+        display: none;
+    }
+}
+@media screen and (max-width: 768px) {
+    .vertical-divider,
+    .social-link {
+        display: none;
+    }
+    .text-right {
+        display: none;
+    }
+}
+
+

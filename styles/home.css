@@ -4,6 +4,8 @@
     min-height: 490px;
     display: flex;
     align-items: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .banner > .container > h1 {
     font-size: 50px;
@@ -12,8 +14,6 @@
     background: linear-gradient(90deg, #262443 0, #2a99d5);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 .banner > .container > h2 {
     font-size: 30px;

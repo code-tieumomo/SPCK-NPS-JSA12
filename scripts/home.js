@@ -1,5 +1,5 @@
 let popularPosts = posts.sort((a, b) => b.hot_point - a.hot_point).slice(0, 4);
-popularPosts.forEach((post) => {
+popularPosts.forEach((post, index) => {
     document.querySelector("#popularPosts").insertAdjacentHTML(
         "beforeend",
         `<div class="col-lg-6 post">
@@ -29,10 +29,10 @@ popularPosts.forEach((post) => {
                       </svg>
                   </button>
               </div>
-              <h3 class="post-name">
+              <a href="/pages/blog-detail.html?id=${index}" class="post-name">
                   [SPOILER] Đánh giá về tập 10 season 1 của House
                   of the Dragon
-              </h3>
+              </a>
               <p class="post-desc">
                   Review và một vài cảm nhận (có spoiler) về tập
                   thứ 10 của House of the Dragon

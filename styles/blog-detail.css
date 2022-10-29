@@ -1,0 +1,37 @@
+#cate {
+    display: block;
+    margin-top: 60px;
+    font-size: 14px;
+}
+
+#title {
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.author-wrapper {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.author-avatar {
+    width: 60px;
+    height: 60px;
+}
+
+#author-name {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+#created {
+    font-size: 12px;
+}
+
+#description {
+    font-style: italic;
+    margin-top: 40px;
+    margin-top: 30px;
+}

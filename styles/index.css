@@ -126,5 +126,70 @@ header {
         display: none;
     }
 }
-
-
+.post {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.post-thumb {
+    height: 140px;
+    width: 200px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+.post-content {
+    margin-left: 15px;
+    display: flex;
+    flex-direction: column;
+}
+.post-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.post-type {
+    text-decoration: none;
+    color: #262443;
+    margin-right: 8px;
+    font-size: 13px;
+}
+.post-readtime {
+    margin-left: 8px;
+    color: #b3b3b3;
+}
+.post-name {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 18px;
+    font-weight: 500;
+}
+.post-desc {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 13px;
+    color: #606266;
+}
+.post-author {
+    display: flex;
+    align-items: center;
+}
+.post-author > img {
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    margin-right: 12px;
+}
+.post-author > a {
+    font-size: 13px;
+    text-decoration: none;
+    color: black;
+}
+.post-cate {
+    font-size: 14px;
+}

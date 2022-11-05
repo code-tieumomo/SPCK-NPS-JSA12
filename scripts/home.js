@@ -1,8 +1,10 @@
-let popularPosts = posts.sort((a, b) => b.hot_point - a.hot_point).slice(0, 4);
-popularPosts.forEach((post, index) => {
-    document.querySelector("#popularPosts").insertAdjacentHTML(
-        "beforeend",
-        `<div class="col-lg-6 post">
+document.addEventListener("DOMContentLoaded", async function () {
+    const posts = await handleData();
+    let popularPosts = posts.sort((a, b) => b.hot_point - a.hot_point).slice(0, 4);
+    popularPosts.forEach((post, index) => {
+        document.querySelector("#popularPosts").insertAdjacentHTML(
+            "beforeend",
+            `<div class="col-lg-6 post">
           <img
               src="https://images.spiderum.com/sp-thumbnails/${post.thumbnail}"
               alt=""
@@ -46,5 +48,6 @@ popularPosts.forEach((post, index) => {
               </div>
           </div>
       </div>`,
-    );
+        );
+    });
 });

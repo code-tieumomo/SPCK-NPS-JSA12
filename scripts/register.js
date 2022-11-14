@@ -1,8 +1,12 @@
+if (localStorage.getItem("user")) {
+    window.location.href = "/";
+}
+
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
 import {
     getAuth,
-    signInWithEmailAndPassword,
+    createUserWithEmailAndPassword,
 } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -21,12 +25,12 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 // Initialize Firebase Authentication and get a reference to the service
 const auth = getAuth(app);
-console.log(auth);
 
-function account() {
+function account(e) {
+    e.preventDefault();
     var _acc = document.querySelector("#acc").value;
     var _pass = document.querySelector("#pass").value;
-    signInWithEmailAndPassword(auth, _acc, _pass)
+    createUserWithEmailAndPassword(auth, _acc, _pass)
         .then((userCredential) => {
             // Signed in
             const user = userCredential.user;
@@ -39,7 +43,10 @@ function account() {
             const errorCode = error.code;
             const errorMessage = error.message;
             // ..
+            console.log(errorMessage);
         });
 }
 
 document.querySelector("form").onsubmit = account;
+
+console.log(document.querySelector("form"));

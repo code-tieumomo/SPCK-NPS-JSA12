@@ -1,4 +1,10 @@
 document.addEventListener("DOMContentLoaded", async function () {
+    if (localStorage.getItem("user")) {
+        document.querySelector("#login").remove();
+        document.querySelector("#signup").remove();
+        document.querySelector("#logout").classList.remove("invisible");
+    }
+
     const posts = await handleData();
     let popularPosts = posts
         .sort((a, b) => b.hot_point - a.hot_point)

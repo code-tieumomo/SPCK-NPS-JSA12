@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", async function () {
     const posts = await handleData();
-    let popularPosts = posts.sort((a, b) => b.hot_point - a.hot_point).slice(0, 4);
+    let popularPosts = posts
+        .sort((a, b) => b.hot_point - a.hot_point)
+        .slice(0, 4);
     popularPosts.forEach((post, index) => {
         document.querySelector("#popularPosts").insertAdjacentHTML(
             "beforeend",

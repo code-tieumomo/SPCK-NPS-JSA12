@@ -84,7 +84,7 @@
     <main>
         <div class="container mt-5">
             <h1>Viết bài</h1>
-            <form class="d-flex flex-column gap-3 mt-4">
+            <form id="create-blog" class="d-flex flex-column gap-3 my-4">
                 <div>
                     <label for="title" class="form-label fw-semibold">Tiêu đề <span class="text-danger">*</span></label>
                     <input type="text" class="form-control border-0 border-bottom rounded-0" id="title" required
@@ -95,9 +95,9 @@
                             class="text-danger">*</span></label>
                     <select id="category" class="form-select border-0 border-bottom rounded-0"
                         aria-label="Default select example">
-                        <option value="1">Quan điểm</option>
-                        <option value="2">Tranh luận</option>
-                        <option value="3">Khoa học</option>
+                        <option value="Quan điểm">Quan điểm</option>
+                        <option value="Tranh luận">Tranh luận</option>
+                        <option value="Khoa học">Khoa học</option>
                     </select>
                 </div>
                 <div>
@@ -121,7 +121,7 @@
     <script src="./../vendors/bootstrap-5.2.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@editorjs/editorjs@latest"></script>
     <script src="./../scripts/index.js"></script>
-    <script src="./../scripts/create-blog.js"></script>
+    <script type="module" src="./../scripts/create-blog.js"></script>
 </body>
 
 </html>

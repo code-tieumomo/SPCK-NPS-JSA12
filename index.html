@@ -165,17 +165,22 @@
         <div class="trending-posts">
             <div class="container">
                 <div id="trendingPosts">
-                    <h2 class="fs-6">NỔI BẬT TRONG THÁNG</h2>
-                    <span>Xem TOP 10 bài viết</span>
+                    <div class="d-flex gap-3 align-items-center mt-3 mb-3">
+                        <h2 class="fs-6 mb-0">NỔI BẬT TRONG THÁNG</h2>
+                        <div class="vertical-divider"></div>
+                        <span>Xem TOP 10 bài viết</span>
+                    </div>
                     <div class="col-lg-6 post" id="TrendingP">
                         <img
                             src="https://images.spiderum.com/sp-thumbnails/${post.thumbnail}"
                             alt=""
-                            class="post-thumb"
+                            class="post-thumb w-100"
                         />
                         <div class="post-content">
                             <div class="post-info">
-                                <span class="post-readtime">22 phút đọc</span>
+                                <span class="post-readtime ms-0 fs-8"
+                                    >22 phút đọc</span
+                                >
                                 <button class="post-bookmark">
                                     <svg
                                         viewBox="0 0 500 500"
@@ -200,12 +205,14 @@
                                 Review và một vài cảm nhận (có spoiler) về tập
                                 thứ 10 của House of the Dragon
                             </p>
-                            <div class="post-author">
+                            <div class="post-author align-items-center d-flex">
                                 <img
                                     src="https://images.spiderum.com/sp-xs-avatar/0a73bd5043f111edbf64b7ea2877ad2e.jpeg"
                                     alt=""
                                 />
-                                <a class="author-name">Hải Stark</a>
+                                <a class="author-name fs-8">Hải Stark</a>
+                                <div class="dot mx-1 fs-8 text-muted">●</div>
+                                <span class="text-muted fs-8">3 Th11</span>
                             </div>
                         </div>
                     </div>

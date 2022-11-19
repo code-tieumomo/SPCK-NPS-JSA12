@@ -8,6 +8,16 @@ button {
     border: none;
 }
 
+/* utility */
+.fs-7 {
+    font-size: 14px;
+}
+.fs-8 {
+    font-size: 12px;
+}
+.ms-05 {
+    margin-left: 0.125rem;
+}
 /* Header */
 header {
     width: 100%;
@@ -193,4 +203,7 @@ header {
 }
 .post-cate {
     font-size: 14px;
+}
+.container > img {
+    width: 100%;
 }

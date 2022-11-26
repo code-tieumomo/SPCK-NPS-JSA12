@@ -115,7 +115,7 @@
     width: 700px;
 }
 #TrendingP {
-    flex-direction: column;
+    /* flex-direction: column; */
     width: 25%;
 }
 #TrendingP > .post-content {
@@ -123,4 +123,14 @@
 }
 #TrendingP > .post-readtime {
     margin-left: -18px;
+}
+
+#trendingPosts .post > img {
+    max-width: 200px;
+}
+
+@media screen and (max-width: 480px) {
+    #trendingPosts .post > img {
+        max-width: 150px;
+    }
 }

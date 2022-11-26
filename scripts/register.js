@@ -41,12 +41,14 @@ function account(e) {
         })
         .catch((error) => {
             const errorCode = error.code;
-            const errorMessage = error.message;
-            // ..
-            console.log(errorMessage);
+            if (errorCode == "auth/email-already-in-use") {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Fail',
+                    text: 'Tài khoản email đã được sử dụng!',
+                })
+            }
         });
 }
 
 document.querySelector("form").onsubmit = account;
-
-console.log(document.querySelector("form"));

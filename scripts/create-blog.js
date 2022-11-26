@@ -26,12 +26,6 @@ const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 
 document.addEventListener("DOMContentLoaded", async function () {
-    if (localStorage.getItem("user")) {
-        document.querySelector("#login").remove();
-        document.querySelector("#signup").remove();
-        document.querySelector("#logout").classList.remove("invisible");
-    }
-
     // Tạo ra editor
     const editor = new EditorJS({
         placeholder: `Vào một ngày em đang làm bài tập trên LeetCode với hy vọng lương tăng gấp rưỡi thì sếp em ra vỗ vai bảo: “Trâu, anh cần chú kiếm cho anh list sách đang best seller trên mấy con e-commerce cho anh.” Thế là em phải đi đào...`,
@@ -42,7 +36,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         e.preventDefault();
         const title = document.querySelector("#title").value;
         const category = document.querySelector("#category").value;
-        const summary = document.querySelector("#summary").value;
+        let summary = document.querySelector("#summary").value;
 
         editor
             .save()
@@ -55,13 +49,23 @@ document.addEventListener("DOMContentLoaded", async function () {
                     summary,
                     content: outputData,
                     thumb: "https://picsum.photos/1920/1080",
-                    author: JSON.parse(localStorage.getItem("user")).email.split("@")[0],
+                    author: JSON.parse(
+                        localStorage.getItem("user"),
+                    ).email.split("@")[0],
                 }).then(function (isSaved) {
-                    alert("Lưu thành công");
+                    Swal.fire({
+                        icon: "success",
+                        title: "Success",
+                        text: "Lưu bài thành công!",
+                    });
                 });
             })
             .catch((error) => {
-                console.log("Saving failed: ", error);
+                Swal.fire({
+                    icon: "error",
+                    title: "Fail",
+                    text: "Lỗi!",
+                });
             });
     };
 });

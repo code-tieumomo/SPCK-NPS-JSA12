@@ -21,9 +21,9 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 // Initialize Firebase Authentication and get a reference to the service
 const auth = getAuth(app);
-console.log(auth);
 
-function account() {
+function account(e) {
+    e.preventDefault();
     var _acc = document.querySelector("#acc").value;
     var _pass = document.querySelector("#pass").value;
     signInWithEmailAndPassword(auth, _acc, _pass)

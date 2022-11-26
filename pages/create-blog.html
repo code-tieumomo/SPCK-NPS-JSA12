@@ -1,127 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+        <!-- Thư viện phải được thêm đầu tiên -->
+        <link
+            rel="stylesheet"
+            href="./../vendors/bootstrap-5.2.2/dist/css/bootstrap.min.css"
+        />
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <link rel="stylesheet" href="./../styles/index.css" />
+        <link rel="stylesheet" href="./../styles/create-blog.css" />
+    </head>
 
-    <!-- Thư viện phải được thêm đầu tiên -->
-    <link rel="stylesheet" href="./../vendors/bootstrap-5.2.2/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="./../styles/index.css" />
-    <link rel="stylesheet" href="./../styles/create-blog.css">
-</head>
-
-<body>
-    <header>
-        <div class="container">
-            <div class="row">
-                <div class="col-12 header-wrapper">
-                    <div class="header-left">
-                        <a href="/" class="logo">
-                            <img src="https://spiderum.com/assets/icons/wideLogo.png" alt="" />
-                        </a>
-                        <div class="vertical-divider"></div>
-                        <a href="#" class="social-link">
-                            <img src="https://spiderum.com/assets/icons/facebook.svg" alt="" />
-                        </a>
-                        <a href="#" class="social-link">
-                            <img src="https://spiderum.com/assets/icons/youtube.svg" alt="" />
-                        </a>
-                        <a href="#" class="social-link">
-                            <img src="https://spiderum.com/assets/icons/spotify.svg" alt="" />
-                        </a>
-                        <a class="shop-link" href="#">
-                            <img src="https://spiderum.com/assets/icons/shop.svg" alt="" />
-                            Spider's Shop
-                        </a>
-                    </div>
-                    <div class="header-right">
-                        <button id="toggle">
-                            <svg _ngcontent-serverApp-c42="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500"
-                                height="25" width="25" fill="currentColor">
-                                <path _ngcontent-serverApp-c42=""
-                                    d="M213.54,62.5c-83.23,0-151,67.81-151,151s67.81,151,151,151a150.22,150.22,0,0,0,95.09-33.85l102.2,102.19a15.62,15.62,0,0,0,22.54-21.64,4.78,4.78,0,0,0-.45-.45L330.73,308.63a150.22,150.22,0,0,0,33.85-95.09C364.58,130.31,296.77,62.5,213.54,62.5Zm0,31.25a119.81,119.81,0,0,1,86.37,202.82,15.56,15.56,0,0,0-3.34,3.34,119.8,119.8,0,1,1-83-206.16Z"
-                                    class="cls-1"></path>
-                            </svg>
-                        </button>
-                        <div class="right-right">
-                            <a href="" class="text-right">Về Spiderum</a>
-                            <a href="/pages/sing.html" class="text-right" id="signup">Đăng ký</a>
-                            <a href="/pages/login.html" id="login">Đăng nhập</a>
-                            <a href="/pages/logout.html" class="invisible" id="logout">Đăng xuất</a>
-                            <a href="/pages/create-blog.html" id="login">Viết bài</a>
+    <body>
+        <header>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 header-wrapper">
+                        <div class="header-left">
+                            <a href="/" class="logo">
+                                <img
+                                    src="https://spiderum.com/assets/icons/wideLogo.png"
+                                    alt=""
+                                />
+                            </a>
+                            <div class="vertical-divider"></div>
+                            <a href="#" class="social-link">
+                                <img
+                                    src="https://spiderum.com/assets/icons/facebook.svg"
+                                    alt=""
+                                />
+                            </a>
+                            <a href="#" class="social-link">
+                                <img
+                                    src="https://spiderum.com/assets/icons/youtube.svg"
+                                    alt=""
+                                />
+                            </a>
+                            <a href="#" class="social-link">
+                                <img
+                                    src="https://spiderum.com/assets/icons/spotify.svg"
+                                    alt=""
+                                />
+                            </a>
+                            <a class="shop-link" href="#">
+                                <img
+                                    src="https://spiderum.com/assets/icons/shop.svg"
+                                    alt=""
+                                />
+                                Spider's Shop
+                            </a>
                         </div>
-                    </div>
-                    <div class="searchBar invisible">
-                        <form action="" class="container">
-                            <button id="toggle2">
-                                <svg width="17" height="12" viewBox="0 0 17 12" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
+                        <div class="header-right">
+                            <button id="toggle">
+                                <svg
+                                    _ngcontent-serverApp-c42=""
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 500 500"
+                                    height="25"
+                                    width="25"
+                                    fill="currentColor"
+                                >
                                     <path
-                                        d="M2.05028 5.28027H15.0103C15.8503 5.28027 16.5303 5.78027 16.5303 6.39027C16.5303 7.00027 15.8503 7.50027 15.0103 7.50027H2.05028C1.21028 7.50027 0.530273 7.00027 0.530273 6.39027C0.530273 5.78027 1.21028 5.28027 2.05028 5.28027Z"
-                                        fill="#414042" />
-                                    <path
-                                        d="M6.06962 0.560059C6.34962 0.560059 6.62962 0.660059 6.84962 0.870059C7.29962 1.30006 7.31961 2.00006 6.87961 2.44006L3.12961 6.31006L6.8696 9.99006C7.3096 10.4301 7.3096 11.1301 6.8696 11.5701C6.4296 12.0101 5.70961 12.0101 5.26961 11.5701L0.969611 7.33006C0.419611 6.79006 0.409607 5.90006 0.949607 5.34006L5.2596 0.900059C5.4696 0.670059 5.76962 0.560059 6.06962 0.560059Z"
-                                        fill="#414042" />
+                                        _ngcontent-serverApp-c42=""
+                                        d="M213.54,62.5c-83.23,0-151,67.81-151,151s67.81,151,151,151a150.22,150.22,0,0,0,95.09-33.85l102.2,102.19a15.62,15.62,0,0,0,22.54-21.64,4.78,4.78,0,0,0-.45-.45L330.73,308.63a150.22,150.22,0,0,0,33.85-95.09C364.58,130.31,296.77,62.5,213.54,62.5Zm0,31.25a119.81,119.81,0,0,1,86.37,202.82,15.56,15.56,0,0,0-3.34,3.34,119.8,119.8,0,1,1-83-206.16Z"
+                                        class="cls-1"
+                                    ></path>
                                 </svg>
                             </button>
-                            <input name="search" type="text" placeholder="Tìm kiếm theo tiêu đề tác giả hoặc tag" />
-                            <svg _ngcontent-serverApp-c42="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500"
-                                height="16" width="16" fill="currentColor">
-                                <path _ngcontent-serverApp-c42=""
-                                    d="M213.54,62.5c-83.23,0-151,67.81-151,151s67.81,151,151,151a150.22,150.22,0,0,0,95.09-33.85l102.2,102.19a15.62,15.62,0,0,0,22.54-21.64,4.78,4.78,0,0,0-.45-.45L330.73,308.63a150.22,150.22,0,0,0,33.85-95.09C364.58,130.31,296.77,62.5,213.54,62.5Zm0,31.25a119.81,119.81,0,0,1,86.37,202.82,15.56,15.56,0,0,0-3.34,3.34,119.8,119.8,0,1,1-83-206.16Z"
-                                    class="cls-1"></path>
-                            </svg>
-                        </form>
+                            <div class="right-right">
+                                <a href="" class="text-right">Về Spiderum</a>
+                                <a
+                                    href="/pages/register.html"
+                                    class="text-right"
+                                    id="signup"
+                                    >Đăng ký</a
+                                >
+                                <a href="/pages/login.html" id="login"
+                                    >Đăng nhập</a
+                                >
+                                <a href="/pages/logout.html" id="logout"
+                                    >Đăng xuất</a
+                                >
+                                <a
+                                    href="/pages/create-blog.html"
+                                    id="write-post"
+                                    >Viết bài</a
+                                >
+                            </div>
+                        </div>
+                        <div class="searchBar invisible">
+                            <form action="" class="container">
+                                <button id="toggle2">
+                                    <svg
+                                        width="17"
+                                        height="12"
+                                        viewBox="0 0 17 12"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            d="M2.05028 5.28027H15.0103C15.8503 5.28027 16.5303 5.78027 16.5303 6.39027C16.5303 7.00027 15.8503 7.50027 15.0103 7.50027H2.05028C1.21028 7.50027 0.530273 7.00027 0.530273 6.39027C0.530273 5.78027 1.21028 5.28027 2.05028 5.28027Z"
+                                            fill="#414042"
+                                        />
+                                        <path
+                                            d="M6.06962 0.560059C6.34962 0.560059 6.62962 0.660059 6.84962 0.870059C7.29962 1.30006 7.31961 2.00006 6.87961 2.44006L3.12961 6.31006L6.8696 9.99006C7.3096 10.4301 7.3096 11.1301 6.8696 11.5701C6.4296 12.0101 5.70961 12.0101 5.26961 11.5701L0.969611 7.33006C0.419611 6.79006 0.409607 5.90006 0.949607 5.34006L5.2596 0.900059C5.4696 0.670059 5.76962 0.560059 6.06962 0.560059Z"
+                                            fill="#414042"
+                                        />
+                                    </svg>
+                                </button>
+                                <input
+                                    name="search"
+                                    type="text"
+                                    placeholder="Tìm kiếm theo tiêu đề tác giả hoặc tag"
+                                />
+                                <svg
+                                    _ngcontent-serverApp-c42=""
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 500 500"
+                                    height="16"
+                                    width="16"
+                                    fill="currentColor"
+                                >
+                                    <path
+                                        _ngcontent-serverApp-c42=""
+                                        d="M213.54,62.5c-83.23,0-151,67.81-151,151s67.81,151,151,151a150.22,150.22,0,0,0,95.09-33.85l102.2,102.19a15.62,15.62,0,0,0,22.54-21.64,4.78,4.78,0,0,0-.45-.45L330.73,308.63a150.22,150.22,0,0,0,33.85-95.09C364.58,130.31,296.77,62.5,213.54,62.5Zm0,31.25a119.81,119.81,0,0,1,86.37,202.82,15.56,15.56,0,0,0-3.34,3.34,119.8,119.8,0,1,1-83-206.16Z"
+                                        class="cls-1"
+                                    ></path>
+                                </svg>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </header>
+        </header>
 
-    <main>
-        <div class="container mt-5">
-            <h1>Viết bài</h1>
-            <form id="create-blog" class="d-flex flex-column gap-3 my-4">
-                <div>
-                    <label for="title" class="form-label fw-semibold">Tiêu đề <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control border-0 border-bottom rounded-0" id="title" required
-                        placeholder="Tôi đã 'ngồi yên' tìm Cuốn sách bán 'chạy' nhất...">
-                </div>
-                <div>
-                    <label for="category" class="form-label fw-semibold">Thể loại <span
-                            class="text-danger">*</span></label>
-                    <select id="category" class="form-select border-0 border-bottom rounded-0"
-                        aria-label="Default select example">
-                        <option value="Quan điểm">Quan điểm</option>
-                        <option value="Tranh luận">Tranh luận</option>
-                        <option value="Khoa học">Khoa học</option>
-                    </select>
-                </div>
-                <div>
-                    <label for="editorjs" class="form-label fw-semibold">Nội dung <span
-                            class="text-danger">*</span></label>
-                    <div id="editorjs"></div>
-                </div>
-                <div>
-                    <label for="summary" class="form-label fw-semibold">Tóm tắt <span
-                            class="text-danger">*</span></label>
-                    <textarea type="text" class="form-control border-0 border-bottom rounded-0" id="summary" required
-                        placeholder="Tóm tắt"></textarea>
-                </div>
-                <div class="d-flex justify-content-end">
-                    <button type="submit" class="btn btn-primary">Đăng bài</button>
-                </div>
-            </form>
-        </div>
-    </main>
+        <main>
+            <div class="container mt-5">
+                <h1>Viết bài</h1>
+                <form id="create-blog" class="d-flex flex-column gap-3 my-4">
+                    <div>
+                        <label for="title" class="form-label fw-semibold"
+                            >Tiêu đề <span class="text-danger">*</span></label
+                        >
+                        <input
+                            type="text"
+                            class="form-control border-0 border-bottom rounded-0"
+                            id="title"
+                            required
+                            placeholder="Tôi đã 'ngồi yên' tìm Cuốn sách bán 'chạy' nhất..."
+                        />
+                    </div>
+                    <div>
+                        <label for="category" class="form-label fw-semibold"
+                            >Thể loại <span class="text-danger">*</span></label
+                        >
+                        <select
+                            id="category"
+                            class="form-select border-0 border-bottom rounded-0"
+                            aria-label="Default select example"
+                        >
+                            <option value="Quan điểm">Quan điểm</option>
+                            <option value="Tranh luận">Tranh luận</option>
+                            <option value="Khoa học">Khoa học</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="editorjs" class="form-label fw-semibold"
+                            >Nội dung <span class="text-danger">*</span></label
+                        >
+                        <div id="editorjs"></div>
+                    </div>
+                    <div>
+                        <label for="summary" class="form-label fw-semibold"
+                            >Tóm tắt</label
+                        >
+                        <textarea
+                            type="text"
+                            class="form-control border-0 border-bottom rounded-0"
+                            id="summary"
+                            placeholder="Tóm tắt"
+                        ></textarea>
+                    </div>
+                    <div class="d-flex justify-content-end">
+                        <button type="submit" class="btn btn-primary">
+                            Đăng bài
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </main>
 
-    <script src="./../vendors/bootstrap-5.2.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@editorjs/editorjs@latest"></script>
-    <script src="./../scripts/index.js"></script>
-    <script type="module" src="./../scripts/create-blog.js"></script>
-</body>
-
+        <script src="./../vendors/bootstrap-5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@editorjs/editorjs@latest"></script>
+        <script src="./../scripts/index.js"></script>
+        <script type="module" src="./../scripts/create-blog.js"></script>
+    </body>
 </html>

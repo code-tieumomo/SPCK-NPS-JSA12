@@ -13,3 +13,12 @@ toggle2.onclick = function (e) {
 const params = new Proxy(new URLSearchParams(window.location.search), {
     get: (searchParams, prop) => searchParams.get(prop),
 });
+
+// Kiểm tra đăng nhập
+if (!localStorage.getItem("user")) {
+    document.getElementById("write-post").remove();
+    document.querySelector("#logout").remove();
+} else {
+    document.querySelector("#login").remove();
+    document.querySelector("#signup").remove();
+}

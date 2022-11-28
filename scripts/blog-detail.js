@@ -44,6 +44,12 @@ document.addEventListener("DOMContentLoaded", async function () {
                     "#thumbnail",
                 ).src = `https://picsum.photos/seed/${postId}/1920/1080`;
 
+                document.querySelector("#content").remove();
+                const editor = new EditorJS({
+                    data: post.content,
+                    readOnly: true,
+                });
+
                 document.querySelector("#overlay").remove();
             } else {
                 window.location.href = "/";
